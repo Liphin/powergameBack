@@ -34,16 +34,12 @@ public class WePayHttpsPost {
     public static CloseableHttpResponse postOpt(String urlStr, String message) {
         try {
             //分别获取证书的密码和路径
-            String MCHID = GlobalConfig.getProperties(Common.MCHID);
+            String MCHID = GlobalConfig.getProperties(Common.COM_PAY_WECHAT_MCHID);
             String certPath = GlobalConfig.getProperties(Common.COM_PAY_WECHAT_CERT_PATH);
 
             //加载证书
             FileInputStream instream = new FileInputStream(new File(certPath));
             KeyStore keyStore = KeyStore.getInstance(Common.PKCS12);
-            logger.debug("mchid"+MCHID);
-            logger.debug("cert: "+certPath);
-            logger.debug("inputstrem: "+instream);
-
             keyStore.load(instream, MCHID.toCharArray());
 
             //关闭流
