@@ -52,7 +52,7 @@ public class BackServer {
 
             Channel ch = b.bind(PORT).sync().channel();
             BackServer.logger.debug("Service access through port on:" + PORT + '/');
-            initFunction();
+            //initFunction();
             ch.closeFuture().sync();
 
         } finally {
