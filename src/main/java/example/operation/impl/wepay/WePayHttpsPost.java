@@ -26,6 +26,7 @@ public class WePayHttpsPost {
 
     /**
      * 微信企业付款 https的post请求
+     *
      * @param urlStr
      * @param message
      * @return
@@ -39,6 +40,8 @@ public class WePayHttpsPost {
             //加载证书
             FileInputStream instream = new FileInputStream(new File(certPath));
             KeyStore keyStore = KeyStore.getInstance(Common.PKCS12);
+            logger.debug(MCHID, certPath, instream);
+
             keyStore.load(instream, MCHID.toCharArray());
 
             //关闭流
@@ -47,7 +50,7 @@ public class WePayHttpsPost {
             }
 
             //加载https请求携带的证书
-            SSLContext sslcontext = SSLContexts.custom().loadKeyMaterial(keyStore,MCHID.toCharArray()).build();
+            SSLContext sslcontext = SSLContexts.custom().loadKeyMaterial(keyStore, MCHID.toCharArray()).build();
             SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslcontext, new String[]{Common.TLSV1},
                     null, SSLConnectionSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
 
