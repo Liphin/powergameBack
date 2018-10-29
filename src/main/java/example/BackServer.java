@@ -67,7 +67,7 @@ public class BackServer {
      */
     private static void initFunction(){
         //运行测试微信发放红包程序, 发送指定的openId， money以分为单位
-        WePayWithdraw.weixinWithdraw("oaCnbs6EiIYbXgc8aYlRRSlJvqGk","100");
+        //WePayWithdraw.weixinWithdraw("oaCnbs6EiIYbXgc8aYlRRSlJvqGk","100");
         //WePayWithdraw.tryDala();
     }
 
