@@ -40,7 +40,9 @@ public class WePayHttpsPost {
             //加载证书
             FileInputStream instream = new FileInputStream(new File(certPath));
             KeyStore keyStore = KeyStore.getInstance(Common.PKCS12);
-            logger.debug(MCHID, certPath, instream);
+            logger.debug("mchid"+MCHID);
+            logger.debug("cert: "+certPath);
+            logger.debug("inputstrem: "+instream);
 
             keyStore.load(instream, MCHID.toCharArray());
 
