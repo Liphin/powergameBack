@@ -1,6 +1,8 @@
 package example;
 
 import com.alibaba.fastjson.JSON;
+import example.operation.entity.response.ResponseData;
+import example.operation.impl.userActOpt.UserActOpt;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
@@ -44,6 +46,16 @@ public class BackAccess {
             BackAccess.logger.debug("come to netty test link");
             httpResponse(ctx, msg, JSON.toJSONString("hello world 1"));
 
+        }
+        //新增用户活动信息
+        else if(uri.equals("/setUserActInfo")){
+            ResponseData responseData = UserActOpt.setUserActInfo(msg);
+            httpResponse(ctx, msg, responseData);
+        }
+        //获取用户活动信息
+        else if(uri.equals("/getUserActInfo")){
+            ResponseData responseData = UserActOpt.getUserActInfo(msg);
+            httpResponse(ctx, msg, responseData);
         }
         //若尚未消费该事件，则返回false
         else {

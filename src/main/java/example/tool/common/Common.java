@@ -42,6 +42,9 @@ public class Common {
     public static String COM_PAY_WECHAT_API_KEY="com.pay.wechat.api_key";
     public static String COM_PAY_WECHAT_CERT_PATH="com.pay.wechat.cert.path";
 
+    //小游戏的公共预定义
+    public static String USERACT = "useract";
+
 
     //证书配置
     public static String PKCS12 = "PKCS12";
