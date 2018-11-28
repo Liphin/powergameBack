@@ -27,7 +27,7 @@ import org.slf4j.LoggerFactory;
 public class BackServer {
     static final Logger logger = LoggerFactory.getLogger(BackServer.class);
     static final boolean SSL = System.getProperty("ssl") != null;
-    static final int PORT = Integer.parseInt(System.getProperty("port", SSL? "8443" : "8081"));
+    static final int PORT = Integer.parseInt(System.getProperty("port", SSL? "8443" : "8084"));
 
     public static void main(String[] args) throws Exception {
         // Configure SSL.
