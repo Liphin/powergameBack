@@ -30,8 +30,8 @@ public class UserActOpt {
         String message = "";
         try{
             Map<String, Object> map = FormData.getParam(msg);
-            String openid = (String) map.get(Common.OPENID);
-            UserAct UserAct = sqlSession.selectOne(Mapper.GET_USER_ACT_INFO, openid);
+            //String openid = (String) map.get(Common.OPENID);
+            UserAct UserAct = sqlSession.selectOne(Mapper.GET_USER_ACT_INFO, map);
             //检查是否查找到指定起始位置及数目的新闻并返回相应结果
             Map<String, Object> data = new HashMap<>();
             data.put(Common.USERACT, UserAct); //返回动态信息
