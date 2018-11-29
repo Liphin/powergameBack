@@ -30,8 +30,8 @@ public class UserActOpt {
         String message = "";
         try{
             Map<String, Object> map = FormData.getParam(msg);
-            //String openid = (String) map.get(Common.OPENID);
-            UserAct UserAct = sqlSession.selectOne(Mapper.GET_USER_ACT_INFO, map);
+            String openid = (String) map.get(Common.OPENID);
+            UserAct UserAct = sqlSession.selectOne(Mapper.GET_USER_ACT_INFO, openid);
             //检查是否查找到指定起始位置及数目的新闻并返回相应结果
             Map<String, Object> data = new HashMap<>();
             data.put(Common.USERACT, UserAct); //返回动态信息
@@ -64,10 +64,10 @@ public class UserActOpt {
         int num = 0;
         try{
             //前端新闻数据获取
-            UserAct UserAct = (UserAct) FormData.getParam(msg, UserAct.class);
-            UserAct.setCreate_time(CommonService.getDateTime());
+            UserAct userAct = (UserAct) FormData.getParam(msg, UserAct.class);
+            userAct.setCreate_time(CommonService.getDateTime());
 
-            num = sqlSession.insert(Mapper.SET_USER_ACT_INFO, UserAct);
+            num = sqlSession.insert(Mapper.SET_USER_ACT_INFO, userAct);
             if (num > 0) {
                 Assemble.responseSuccessSetting(responseData, null);
             } else {
