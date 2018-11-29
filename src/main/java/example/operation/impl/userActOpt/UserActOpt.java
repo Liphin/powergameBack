@@ -38,7 +38,7 @@ public class UserActOpt {
             Assemble.responseSuccessSetting(responseData, data);
 
             if (!CommonService.checkNotNull(UserAct)) {
-                message = "news info not found";
+                message = "userAct info not found";
                 UserActOpt.logger.warn(message);
             }
         } catch (Exception e) {
@@ -76,7 +76,7 @@ public class UserActOpt {
                 Assemble.responseErrorSetting(responseData, 401, message);
             }
         } catch (Exception e) {
-            message = "saveNewsData system error";
+            message = "setUserActInfo system error";
             UserActOpt.logger.error(message, e);
             Assemble.responseErrorSetting(responseData, 500, message);
         } finally {
