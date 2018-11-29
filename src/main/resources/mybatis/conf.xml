@@ -59,5 +59,8 @@
     <mappers>
         <!--类的话查找全类名 需要用.标识-->
         <mapper class="example.operation.mapper.ExampleMapper"/>
+        <mapper class="example.operation.mapper.ItemLibraryMapper"/>
+        <mapper class="example.operation.mapper.UserActMapper"/>
+        <mapper class="example.operation.mapper.UserMoneyMapper"/>
     </mappers>
 </configuration>
