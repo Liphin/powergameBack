@@ -6,6 +6,9 @@ public class UserAct {
     private String openid;
     private String item_list;
     private String last_item_list;
+    private String pass_1_list;
+    private String pass_2_list;
+    private String pass_3_list;
     private int pass_1;
     private int pass_2;
     private int pass_3;
@@ -57,6 +60,31 @@ public class UserAct {
     public void setLast_item_list(String last_item_list) {
         this.last_item_list = last_item_list;
     }
+
+    public String getPass_1_list() {
+        return pass_1_list;
+    }
+
+    public void setPass_1_list(String pass_1_list) {
+        this.pass_1_list = pass_1_list;
+    }
+
+    public String getPass_2_list() {
+        return pass_2_list;
+    }
+
+    public void setPass_2_list(String pass_2_list) {
+        this.pass_2_list = pass_2_list;
+    }
+
+    public String getPass_3_list() {
+        return pass_3_list;
+    }
+
+    public void setPass_3_list(String pass_3_list) {
+        this.pass_3_list = pass_3_list;
+    }
+
 
     public int getPass_1() {
         return pass_1;
@@ -193,6 +221,9 @@ public class UserAct {
                 ", openid='" + openid + '\'' +
                 ", item_list='" + item_list + '\'' +
                 ", last_item_list='" + last_item_list + '\'' +
+                ", pass_1_list='" + pass_1_list + '\'' +
+                ", pass_2_list='" + pass_2_list + '\'' +
+                ", pass_3_list='" + pass_3_list + '\'' +
                 ", pass_1=" + pass_1 +
                 ", pass_2=" + pass_2 +
                 ", pass_3=" + pass_3 +

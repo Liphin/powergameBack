@@ -19,8 +19,8 @@ public interface UserActMapper {
 
     /*********insert*********/
     //新增朋友圈，同时新增动态信息图片表，记录图片个数和图片名字
-    @Insert("insert into useract(openid, item_list, last_item_list, pass_1, pass_2, pass_3, pass_4, passStatus_1, passStatus_2, passStatus_3, passStatus_4, enjoy_num, chance_num,harvest_flag,harvest_type,harvest_money,timestamp,create_time) " +
-            "values(#{openid}, #{item_list}, #{last_item_list}, #{pass_1}, #{pass_2}, #{pass_3}, #{pass_4}, #{passStatus_1}, #{passStatus_2}, #{passStatus_3}, #{passStatus_4}, #{enjoy_num}, #{chance_num},#{harvest_flag},#{harvest_type},#{harvest_money},#{timestamp},#{create_time})")
+    @Insert("insert into useract(openid, item_list, last_item_list, pass_1_list, pass_2_list, pass_3_list, pass_1, pass_2, pass_3, pass_4, passStatus_1, passStatus_2, passStatus_3, passStatus_4, enjoy_num, chance_num,harvest_flag,harvest_type,harvest_money,timestamp,create_time) " +
+            "values(#{openid}, #{item_list}, #{last_item_list}, #{pass_1_list}, #{pass_2_list}, #{pass_3_list}, #{pass_1}, #{pass_2}, #{pass_3}, #{pass_4}, #{passStatus_1}, #{passStatus_2}, #{passStatus_3}, #{passStatus_4}, #{enjoy_num}, #{chance_num},#{harvest_flag},#{harvest_type},#{harvest_money},#{timestamp},#{create_time})")
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     public int setUserActInfo(UserAct userAct);
 
